@@ -1,4 +1,6 @@
-from app.views.v1.translate import *
+from fastapi import APIRouter, status
+from app.views.v1.translate import translator, TranslationRequest, TranslationResponse, fetch_model_data_from_request, translate_text
+import re
 
 translate_markdown = APIRouter(prefix='/api/v1/translate_markdown')
 def remove_markdown(text):

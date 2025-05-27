@@ -16,10 +16,12 @@ def create_app() -> FastAPI:
 
     from app.views.v1.translate import translate_v1
     from app.views.v1.translate_html import translate_html
+    from app.views.v1.translate_markdown import translate_markdown
 
 
     app.include_router(translate_v1)
     app.include_router(translate_html)
+    app.include_router(translate_markdown)
 
 
     @app.on_event('startup')
